@@ -17,16 +17,14 @@ const Wiki = () => {
  const [search,setSearch]=useState('') 
  const[result,setResult]=useState([])
  const[noResults,setNoResults]=useState(false)
- const [isClicked, setClicked] = useState([]);
-  console.log({isClicked})
- const [icon, setIcon] = useState(<FavoriteIcon />);
  const [savedResults, setSavedResults] = useState(
   JSON.parse(localStorage.getItem('savedResults')) || []
 );
-console.log(savedResults)
- const [open, setOpen] = useState(false);
+
+const [open, setOpen] = useState(false);
  const handleOpen = () => setOpen(true);
  const handleClose = () => setOpen(false);
+
  const Search=async(e)=>{
     e.preventDefault();
     setLoading(true)
@@ -40,7 +38,6 @@ console.log(savedResults)
             setTimeout(()=>{
               setLoading(false)           
             },500)
-            setClicked(true);
               if (resp.data.query.searchinfo.totalhits === 0){
                   setNoResults(true)
               } else {
@@ -117,8 +114,8 @@ console.log(savedResults)
            <p dangerouslySetInnerHTML={{ __html:item.snippet}}></p>
            <div className='endof-item'>
              <a className='link' href={pageid}>Read more... </a> 
-             <button  type='button' className='buttonn'onClick={() =>{handleClick(item);isClicked(item)}}>
-            {isClicked? (<FavoriteBorderIcon/>):(<FavoriteIcon/>)} 
+             <button  type='button' className='buttonn'onClick={() =>handleClick(item)}>
+           <FavoriteBorderIcon/>
          
              </button>
             
