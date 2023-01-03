@@ -1,0 +1,176 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    
+    .section{
+     display: flex ;
+     justify-content: center;
+    .search{
+        width: 25rem;
+        @media (max-width:999px) {
+            width: 75%;
+    }
+    }
+
+
+    .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+        border-radius: 10px;
+    }
+    .search-button{
+        margin-left: -45px;
+        background-color: transparent !important;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        &:hover{
+            transform: scale(1.1);
+
+        }
+
+      }
+      .history-button{
+        margin-left: 15px;
+        background-color: transparent !important;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        &:hover{
+            transform: scale(1.1);
+
+        }
+      }
+    }
+    .section-result{
+        display: flex ;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    
+
+        .item{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 50%;
+            background-color:#1971c2;
+            box-shadow: 1px 6px 6px (rgb(134, 134, 134));
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+           animation: fadein 0.3s linear;
+
+     
+            @media (max-width:999px) {
+                    width: 90%;
+            }
+            @keyframes fadein {
+                0%{
+                    transform: translateY(-9px);
+                    opacity: 0%;
+
+                }
+               
+                100%{
+                    transform: translateX(0);
+                    opacity: 100%;
+                }
+            }
+            .title{
+                font-size: large;
+                font-family: sans-serif;
+                display: flex;
+                align-items: flex-start;
+                font-weight: 700;
+                letter-spacing: 1px;
+                color: #f3f3f3;
+              }
+          
+           
+           .endof-item{
+            display: flex ;
+            justify-content: space-between;
+
+
+            .link{
+                background-color:whitesmoke;
+                border-radius: 1rem;
+                width: 8rem;
+                display: flex;
+                justify-content: center;
+                border: none;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                transition: 0.2s all ease-in-out;
+                &:hover{
+                    box-shadow: 2px 2px 5px #808080;
+                    transform: translateY(-4px);
+                }
+               }
+               .buttonn{
+                width: 8rem;
+                background-color: transparent;
+                color: white;
+                border: none;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                transition: 0.2s all ease-in-out;
+                &:hover{
+                    transform: translateY(-2px);
+                    cursor: pointer;
+                }
+               }
+
+
+           }
+        
+        }
+    }
+
+    .loading{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+   
+    }
+
+}
+
+.history-page{
+    background-color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    height: 30rem;
+    text-align: center;
+   padding: 2rem;
+   border-radius: 0.5rem;
+   overflow-y: auto;
+   @media (max-width:999px) {
+    width: 70%;
+}
+    .history-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        .history-text{
+            font-size: small;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .history-button{
+            font-size: small;
+            background-color: #1971c2;
+            color: white;
+            padding: 0.5rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 0.5rem;
+         
+        }
+    }
+}
